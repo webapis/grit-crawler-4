@@ -22,7 +22,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
     const title = await page.title();
     log.info(`${title}`, { url: request.loadedUrl });
 
-    await dataset.pushData({
+    await pushData({
         url: request.loadedUrl,
         title,
     });
