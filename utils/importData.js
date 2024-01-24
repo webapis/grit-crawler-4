@@ -1,10 +1,11 @@
 import { createRequire } from 'module';
+import {Dataset } from 'crawlee';
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 const algoliasearch = require("algoliasearch");
 
 const client = algoliasearch("7JF244QSZZ", process.env.ALGOLIAKEY);
-
+const marka = process.env.marka
 function setSettings(index) {
   return new Promise((resolve, reject) => {
     try {
@@ -53,4 +54,10 @@ debugger
   });
 }
 
-export default importLinkData ;
+const dataDataset = await Dataset.open('brands');
+const { items} = await dataDataset.getData();
+debugger
+console.log('items---',items)//
+await importLinkData({data:items.map(m=>{return {...m,brand:marka}}),brand:marka })
+
+

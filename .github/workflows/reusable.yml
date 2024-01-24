@@ -64,6 +64,9 @@ jobs:
       - name: aggregation step
         id: collection
         run: node src/main.js
+      - name: upload data
+        id: algolia
+        run: node utils/importData.js
       # - name: update schema
       #   id: impdschemaata
       #   run: node typesense/createSchema.mjs
