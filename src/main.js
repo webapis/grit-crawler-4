@@ -17,7 +17,7 @@ const crawler = new PuppeteerCrawler({
     requestList: await RequestList.open(null, urls.filter(f=>f.url.includes(marka)).map(m => { return { url: m.url, userData: { start: true, selector: m.selector } } })),
     requestHandler: router,
     // Comment this option to scrape the full website.
- maxRequestsPerCrawl: 5,
+ //maxRequestsPerCrawl: 5,
     maxConcurrency: 2,
     preNavigationHooks,
 });
