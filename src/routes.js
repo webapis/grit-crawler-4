@@ -6,7 +6,7 @@ const requestQueue = await RequestQueue.open();
 const require = createRequire(import.meta.url);
 require('dotenv').config()
 const marka = process.env.marka
-router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { start, selector,imageSelector }, url }, page }) => {
+router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { start, selector, imageSelector }, url }, page }) => {
     log.info(`enqueueing new URLs ${url}`);
     debugger
 
@@ -37,7 +37,11 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
     const { userData: { imageSelector } } = request
     log.info(`${title}`, { url: request.loadedUrl });
     debugger
-await page.waitForTimeout(5000)
+    await page.evaluate(() => {
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+    await page.waitForTimeout(5000)
+ 
     const imageUrl = await page.evaluate((_imageSelector) => Array.from(document.querySelectorAll(_imageSelector)).map(m => m.src), imageSelector)
 
     debugger
@@ -45,7 +49,7 @@ await page.waitForTimeout(5000)
     await dataset.pushData({
         url: request.loadedUrl,
         title,
-        imageUrl: imageUrl.length > 0 ? imageUrl.filter(f => f.length > 0)[0]: []
+        imageUrl: imageUrl.length > 0 ? imageUrl.filter(f => f.length > 0)[0] : []
     });
 });
 
@@ -76,3 +80,4 @@ async function extractImageUrls(page, imageSelector) {
     })
 
 }
+
