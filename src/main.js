@@ -18,7 +18,7 @@ const crawler = new PuppeteerCrawler({
     requestHandler: router,
     // Comment this option to scrape the full website.
  //maxRequestsPerCrawl: 3,
-    maxConcurrency: 10,
+    maxConcurrency: 5,
     preNavigationHooks,
 });
 
