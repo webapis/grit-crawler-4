@@ -37,7 +37,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
     const { userData: { imageSelector } } = request
     log.info(`${title}`, { url: request.loadedUrl });
     debugger
-
+await page.waitForTimeout(5000)
     const imageUrl = await page.evaluate((_imageSelector) => Array.from(document.querySelectorAll(_imageSelector)).map(m => m.src), imageSelector)
 
     debugger
