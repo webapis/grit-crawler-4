@@ -13,7 +13,7 @@ export default [
     { url: 'https://www.avva.com.tr/', selector: '.navigation a',pageSelector:'.productItem' },
     { url: 'https://www.bagmori.com/', selector: '.HorizontalList  a',pageSelector:'.ProductList' },
     { url: 'https://www.bambiayakkabi.com.tr/', selector: '#divUcTopMenu a',pageSelector:'.productItem' },
-    { url: 'https://www.baqa.com.tr/', selector: '.navigation a' },
+    { url: 'https://www.baqa.com.tr/', selector: '.navigation a',pageSelector:'.ItemOrj.col-3' },
     { url: 'https://www.bershka.com/tr/h-woman.html', selector: '.menu-desktop__nav a' },
     //{ url: '', selector: '' },
 //    { url: '', selector: '' },
