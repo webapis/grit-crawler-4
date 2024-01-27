@@ -73,9 +73,8 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 
             if (errorPercentate < 5) {
 
-                const productItemsWithoutError = data.filter(f => !f.error)
-
-                console.log('productItemsWithoutError----', productItemsWithoutError.length)
+        
+          
                 await dataset.pushData({
                     url: request.loadedUrl,
                     title,
