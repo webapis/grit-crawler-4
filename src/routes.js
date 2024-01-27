@@ -19,7 +19,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { star
             // Add custom data to the request object:
             request.userData = {
                 label: 'detail',
-           
+
                 pageSelector
                 // ...any other data you want to pass
             };
@@ -34,7 +34,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { star
 router.addHandler('detail', async ({ request, page, log, pushData }) => {
     const title = await page.title();
 
-    const { userData: {  pageSelector } } = request
+    const { userData: { pageSelector } } = request
 
 
     const isProductPage = await page.$(pageSelector)
@@ -45,20 +45,51 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
         const { handler } = require(`./handlers/${marka}.cjs`)
         const data = await handler(page)
 
-        if (data.length > 0) {
-            await dataset.pushData({
-                url: request.loadedUrl,
-                title,
-                imageUrl: data[0].imageUrl
-            });
 
-            log.info(`PRODUCT PAGE: DATALENGTH:${data.length} ${title}`, { url: request.loadedUrl });
+        if (data.length > 0) {
+
+            const withError = data.filter(f => f.error)
+            let errorPercentate = 0
+            if (withError.length > 0) {
+                const errorDataset = await Dataset.open(`withError`);
+                await errorDataset.pushData(withError)
+                console.log('withError:length', withError.length)
+                console.log('withError:error', withError[0].error)
+                console.log('withError:url', withError[0].url)
+                console.log('withError:content', withError[0].content)
+                errorPercentate = Math.round(calculateErrorPercentage(data.length, withError.length))
+                if (errorPercentate >= 5) {
+
+                    throw `Total error exceeds ${errorPercentate} %`
+
+                } else {
+
+
+                    console.log('Error %', errorPercentate)
+                }
+
+
+            }
+
+            if (errorPercentate < 5) {
+
+                const productItemsWithoutError = data.filter(f => !f.error)
+
+                console.log('productItemsWithoutError----', productItemsWithoutError.length)
+                await dataset.pushData({
+                    url: request.loadedUrl,
+                    title,
+                    imageUrl: data[0].imageUrl
+                });
+
+                log.info(`PRODUCT PAGE: DATALENGTH:${data.length} ${title}`, { url: request.loadedUrl });
+            }
+
+
         } else {
             log.info(`PRODUCT PAGE: DATALENGTH:${data.length} ${title}`, { url: request.loadedUrl });
         }
         debugger
-
-
 
     } else {
 
@@ -70,5 +101,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 });
 
 
-
+function calculateErrorPercentage(firstValue, secondValue) {
+    return (secondValue / firstValue) * 100;
+}
 

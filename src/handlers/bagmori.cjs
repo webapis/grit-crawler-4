@@ -1,12 +1,11 @@
 
-
 //const {autoScroll}=require('../../utils/autoscroll')
 async function handler(page) {
 
 
     await page.waitForSelector('.ProductList',{timeout:180000})
   // const totalProducts= await page.evaluate(()=>parseInt(document.querySelector("[for^=sidebar-filter-p-product_type]").innerText.replace(/[^\d]/g,"")))
-  //  await autoScroll(page);
+   // await autoScroll(page);
 
     debugger
     const data = await page.$$eval('.ProductItem', (productCards) => {
@@ -15,7 +14,7 @@ async function handler(page) {
                 const priceNew = document.querySelector('.ProductItem__Price').innerText.replace('TL','')
                 const link = document.querySelector(".ProductItem__Title.Heading a").href
        
-                const imageUrl =document.querySelector('.ProductItem__Image').srcset.split(',')[0].split(' ')[0]
+                const imageUrl =document.querySelector('.ProductItem__Image').getAttribute('data-srcset')? document.querySelector('.ProductItem__Image').getAttribute('data-srcset').split(',')[0].split(' ')[0]:document.querySelector('.ProductItem__Image').getAttribute('data-src').replace('{width}',600)
         
                 const title = document.querySelector(".ProductItem__Title.Heading a").innerText
                 return {
@@ -28,15 +27,15 @@ async function handler(page) {
                 }
             } catch (error) {
 
-                throw error
-              //  return {error:error.toString(),content:document.innerHTML}
+              
+              return {error:error.toString(),content:document.innerHTML}
             }
         
         })
     })
 
 
-
+debugger
 
 
     return data

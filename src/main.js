@@ -1,5 +1,5 @@
 // For more information, see https://crawlee.dev/
-import { PuppeteerCrawler, ProxyConfiguration, RequestList,Dataset } from 'crawlee';
+import { PuppeteerCrawler, RequestList } from 'crawlee';
 import { router } from './routes.js';
 import preNavigationHooks from './crawler-helper/preNavigationHooks.mjs';
 import { createRequire } from 'module';
