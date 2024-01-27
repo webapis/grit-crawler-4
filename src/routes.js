@@ -19,7 +19,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { star
             // Add custom data to the request object:
             request.userData = {
                 label: 'detail',
-                imageSelector,
+           
                 pageSelector
                 // ...any other data you want to pass
             };
