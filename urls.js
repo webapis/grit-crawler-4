@@ -4,7 +4,7 @@ export default [
     { url: 'https://www.lcwaikiki.com/tr-TR/TR/site-haritasi', selector: '.sitemap a' },
 
     { url: 'https://www.abiyefon.com/', selector: '#topMainMenu a',pageSelector:'.products' },
-    { url: 'https://www.addax.com.tr/', selector: '#MainMenu a' },
+    { url: 'https://www.addax.com.tr/', selector: '#MainMenu a', pageSelector:'.Prd' },
     { url: 'https://www.adidas.com.tr/tr', selector: '[data-auto-id="main-menu"] a' },
     { url: 'https://www.adl.com.tr/', selector: '.navigation a' },
     { url: 'https://alinderi.com.tr/', selector: '#cbp-hrmenu a' },
