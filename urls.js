@@ -1,5 +1,5 @@
 export default [
-    { url: 'https://www.defacto.com.tr/statik/sitemap', selector: '.page-body-content-sitemap a',imageSelector:'.product-card a img' },
+    { url: 'https://www.defacto.com.tr/statik/sitemap', selector: '.page-body-content-sitemap a',imageSelector:'.product-card a img',pageSelector:".catalog-products" },
     { url: 'https://www.koton.com/site-haritasi', selector: '.site-map__box a',imageSelector:"picture img" },
     { url: 'https://www.lcwaikiki.com/tr-TR/TR/site-haritasi', selector: '.sitemap a' },
 
