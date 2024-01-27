@@ -14,7 +14,7 @@ const marka = process.env.marka
 const crawler = new PuppeteerCrawler({
    // headless: false,
     // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] }),
-    requestList: await RequestList.open(null, urls.filter(f=>f.url.includes(marka)).map(m => { return { url: m.url, userData: { start: true, selector: m.selector,imageSelector:m.imageSelector,pageSelector:m.pageSelector } } })),
+    requestList: await RequestList.open(null, urls.filter(f=>f.url.includes(marka)).map(m => { return { url: m.url, userData: { start: true, selector: m.selector,pageSelector:m.pageSelector } } })),
     requestHandler: router,
     // Comment this option to scrape the full website.
  //maxRequestsPerCrawl: 3,
