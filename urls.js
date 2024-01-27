@@ -8,7 +8,7 @@ export default [
     { url: 'https://www.adidas.com.tr/tr', selector: '[data-auto-id="main-menu"] a' },
     { url: 'https://www.adl.com.tr/', selector: '.navigation a',pageSelector:'.products__items' },
     { url: 'https://alinderi.com.tr/', selector: '#cbp-hrmenu a',pageSelector:'.js-product-miniature-wrapper' },
-    { url: 'https://www.alpinist.com.tr/', selector: '#navigation a' },
+    { url: 'https://www.alpinist.com.tr/', selector: '#navigation a',pageSelector:'.showcase-container' },
     { url: 'https://www.armine.com/', selector: '.navigation a' },
     { url: 'https://www.avva.com.tr/', selector: '.navigation a' },
     { url: 'https://www.bagmori.com/', selector: '.HorizontalList  a' },
