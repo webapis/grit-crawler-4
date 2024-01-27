@@ -10,7 +10,7 @@ export default [
     { url: 'https://alinderi.com.tr/', selector: '#cbp-hrmenu a',pageSelector:'.js-product-miniature-wrapper' },
     { url: 'https://www.alpinist.com.tr/', selector: '#navigation a',pageSelector:'.showcase-container' },
     { url: 'https://www.armine.com/', selector: '.navigation a',pageSelector:'#ProductPageProductList' },
-    { url: 'https://www.avva.com.tr/', selector: '.navigation a' },
+    { url: 'https://www.avva.com.tr/', selector: '.navigation a',pageSelector:'.productItem' },
     { url: 'https://www.bagmori.com/', selector: '.HorizontalList  a' },
     { url: 'https://www.bambiayakkabi.com.tr/', selector: '#divUcTopMenu a' },
     { url: 'https://www.baqa.com.tr/', selector: '.navigation a' },

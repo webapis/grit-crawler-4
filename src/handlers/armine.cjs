@@ -1,16 +1,16 @@
 
-//const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll.cjs')
 
 async function handler(page) {
 
 
-  //  await autoScroll(page)
+  //await autoScroll(page)
 
     const data = await page.$$eval('#ProductPageProductList .ItemOrj', (productCards) => {
         return productCards.map(document => {
             try {
 
-                const imageUrl = document.querySelector('.productSliderImage')? document.querySelector('.productSliderImage').src: document.querySelector('[data-original]').getAttribute('data-original')
+                const imageUrl = document.querySelector('.detailLink img[data-src]').getAttribute('data-src')
                 const title = document.querySelector('.productName.detailUrl a').innerHTML.trim()
                 const priceNew = document.querySelector('.discountPrice span').innerHTML.replace('₺', '').replace(/\n/g, '').trim()
                 const link = document.querySelector('.productName.detailUrl a').href
