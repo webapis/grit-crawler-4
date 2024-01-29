@@ -31,7 +31,7 @@ export default [
  { url: 'https://www.deriderim.com/',selector:'.navigation a', pageSelector:'#ProductPageProductList' },
  { url: 'https://derimod.com.tr/collections/erkek-anasayfa?filter.v.availability=1',selector:'.site-header div.items-center a', pageSelector:'.ProductCard' },
  { url: 'https://derimod.com.tr/collections/kadin-anasayfa?filter.v.availability=1',selector:'.site-header div.items-center a', pageSelector:'.ProductCard' },
-
+ { url: 'https://www.deristore.com.tr/',selector:'.megamenu-pattern a', pageSelector:'.product' },
 ]
 
 //blacknoble
