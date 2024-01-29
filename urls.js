@@ -28,6 +28,7 @@ export default [
  //  { url: 'https://www.colins.com.tr/',selector:'#defaultmenu a', pageSelector:'.productbox.clearfix.list-item' },
  { url: 'https://www.dericeket.com.tr/',selector:'.navigation a', pageSelector:'.productItem' },
  { url: 'https://www.dericlub.com.tr/',selector:'.navigation a', pageSelector:'.ItemOrj' },
+ { url: 'https://www.deriderim.com/',selector:'.navigation a', pageSelector:'#ProductPageProductList' },
 ]
 
 //blacknoble
