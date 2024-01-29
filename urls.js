@@ -32,6 +32,7 @@ export default [
  { url: 'https://derimod.com.tr/collections/erkek-anasayfa?filter.v.availability=1',selector:'.site-header div.items-center a', pageSelector:'.ProductCard' },
  { url: 'https://derimod.com.tr/collections/kadin-anasayfa?filter.v.availability=1',selector:'.site-header div.items-center a', pageSelector:'.ProductCard' },
  { url: 'https://www.deristore.com.tr/',selector:'.megamenu-pattern a', pageSelector:'.product' },
+ { url: 'https://www.desa.com.tr/kadin/',selector:'.category-container a', pageSelector:'.product-item-box' },
+ { url: 'https://www.desa.com.tr/erkek/',selector:'.category-container a', pageSelector:'.product-item-box' },
 ]
 
-//blacknoble
