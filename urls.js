@@ -36,5 +36,6 @@ export default [
  { url: 'https://www.desa.com.tr/erkek/',selector:'.category-container a', pageSelector:'.product-item-box' },
  { url: 'https://www.dilvin.com.tr/',selector:'.nav.navbar-nav a', pageSelector:'.product' },
  { url: 'https://www.divarese.com.tr/',selector:'.navbar__content a', pageSelector:'.products__item' },
+ { url: 'https://www.dogostore.com/',selector:'nav ul.menu a', pageSelector:'#mainColumn' },
 ]
 
