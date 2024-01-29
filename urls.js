@@ -24,6 +24,7 @@ export default [
    { url: 'https://www.bsl.com.tr/tr/site-haritasi',selector:'.SitemapMenu a', pageSelector:'.Prd' },
    { url: 'https://www.butigo.com.tr/',selector:'.navigation a', pageSelector:'[data-gtm-product]' },
    { url: 'https://www.bysaygi.com/',selector:'.navigation a', pageSelector:'.productItem' },
+   { url: 'https://www.centone.com.tr/',selector:'.main-nav a', pageSelector:'.product-item' },
 ]
 
 //blacknoble
