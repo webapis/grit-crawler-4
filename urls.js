@@ -27,6 +27,7 @@ export default [
    { url: 'https://www.centone.com.tr/',selector:'.main-nav a', pageSelector:'.product-item' },
  //  { url: 'https://www.colins.com.tr/',selector:'#defaultmenu a', pageSelector:'.productbox.clearfix.list-item' },
  { url: 'https://www.dericeket.com.tr/',selector:'.navigation a', pageSelector:'.productItem' },
+ { url: 'https://www.dericlub.com.tr/',selector:'.navigation a', pageSelector:'.ItemOrj' },
 ]
 
 //blacknoble
