@@ -18,9 +18,9 @@ export default [
     { url: 'https://www.beymen.com/home/sitemap', selector:'.m-subNav .m-subNav__item a.m-subNav__link', pageSelector:'#productList' },
   //  { url: 'https://www.beymenclub.com/kadin-30058',selector:'a.m-subNav__link', pageSelector:'#productList' },
   //  { url: 'https://www.beymenclub.com/erkek-30060',selector:'a.m-subNav__link', pageSelector:'#productList' },
-   { url: 'https://www.beyyoglu.com/kadin/',selector:'a', pageSelector:'.js-product-wrapper.product-item' },
- //  { url: 'https://www.beyyoglu.com/erkek/',selector:'tegories a', pageSelector:'.js-product-wrapper.product-item' },
-   { url: 'https://www.blacknoble.com/erkek?currency=try',selector:'.navigation a', pageSelector:'' },
+   { url: 'https://www.beyyoglu.com/kadin/',selector:'list__header-categories a', pageSelector:'.js-product-wrapper.product-item' },
+   { url: 'https://www.beyyoglu.com/erkek/',selector:'.list__header-categories a', pageSelector:'.js-product-wrapper.product-item' },
+   { url: 'https://www.blacknoble.com/erkek?currency=try',selector:'.navigation a', pageSelector:'.productItem' },
 ]
 
 //blacknoble
