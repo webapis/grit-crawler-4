@@ -37,5 +37,9 @@ export default [
  { url: 'https://www.dilvin.com.tr/',selector:'.nav.navbar-nav a', pageSelector:'.product' },
  { url: 'https://www.divarese.com.tr/',selector:'.navbar__content a', pageSelector:'.products__item' },
  { url: 'https://www.dogostore.com/',selector:'nav ul.menu a', pageSelector:'#mainColumn' },
+ { url: 'https://www.elleshoes.com/kadin',selector:'.kategoriLink a', pageSelector:'.productItem' },
+ { url: 'https://www.elleshoes.com/erkek',selector:'.kategoriLink a', pageSelector:'.productItem' },
+ { url: 'https://www.elleshoes.com/kadin-deri-ceket',selector:'.kategoriLink a', pageSelector:'.productItem' },
+ { url: 'https://www.elleshoes.com/erkek-deri-ceket',selector:'.kategoriLink a', pageSelector:'.productItem' },
 ]
 
