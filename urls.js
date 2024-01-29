@@ -23,6 +23,7 @@ export default [
    { url: 'https://www.blacknoble.com/erkek?currency=try',selector:'.navigation a', pageSelector:'.productItem' },
    { url: 'https://www.bsl.com.tr/tr/site-haritasi',selector:'.SitemapMenu a', pageSelector:'.Prd' },
    { url: 'https://www.butigo.com.tr/',selector:'.navigation a', pageSelector:'[data-gtm-product]' },
+   { url: 'https://www.bysaygi.com/',selector:'.navigation a', pageSelector:'.productItem' },
 ]
 
 //blacknoble
