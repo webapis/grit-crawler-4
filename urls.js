@@ -29,6 +29,7 @@ export default [
  { url: 'https://www.dericeket.com.tr/',selector:'.navigation a', pageSelector:'.productItem' },
  { url: 'https://www.dericlub.com.tr/',selector:'.navigation a', pageSelector:'.ItemOrj' },
  { url: 'https://www.deriderim.com/',selector:'.navigation a', pageSelector:'#ProductPageProductList' },
+ { url: 'https://derimod.com.tr/collections/erkek-anasayfa?filter.v.availability=1',selector:'.site-header div.items-center a', pageSelector:'.ProductCard' },
 ]
 
 //blacknoble
