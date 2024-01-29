@@ -15,7 +15,7 @@ export default [
     { url: 'https://www.bambiayakkabi.com.tr/', selector: '#divUcTopMenu a',pageSelector:'.productItem' },
   //  { url: 'https://www.baqa.com.tr/', selector: '.navigation a',pageSelector:'.ItemOrj.col-3' },
     { url: 'https://www.bershka.com/tr/h-woman.html', selector: '.menu-desktop__nav a',pageSelector:'.category-product-card' },
-    //{ url: '', selector: '' },
+    { url: 'https://www.beymen.com/', pageSelector:'#productList' },
 //    { url: '', selector: '' },
 //    { url: '', selector: '' },
 ]
