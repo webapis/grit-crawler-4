@@ -58,6 +58,11 @@ const dataDataset = await Dataset.open('brands');
 const { items} = await dataDataset.getData();
 debugger
 console.log('items---',items)//
-await importLinkData({data:items.map(m=>{return {...m,brand:marka}}),brand:marka })
+if(items.length>0){
+  await importLinkData({data:items.map(m=>{return {...m,brand:marka}}),brand:marka })
+}else{
+  throw 'No Items found to upload'
+}
+
 
 

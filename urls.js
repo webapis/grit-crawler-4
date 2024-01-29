@@ -17,5 +17,9 @@ export default [
     { url: 'https://www.bershka.com/tr/h-woman.html', selector: '.menu-desktop__nav a',pageSelector:'.category-product-card' },
     { url: 'https://www.beymen.com/', pageSelector:'#productList' },
    { url: 'https://www.beymenclub.com/', pageSelector:'#productList' },
-   { url: 'https://www.beyyoglu.com/', pageSelector:'.js-product-wrapper.product-item' },
+   { url: 'https://www.beyyoglu.com/kadin/', pageSelector:'.js-product-wrapper.product-item' },
+   { url: 'https://www.beyyoglu.com/erkek/', pageSelector:'.js-product-wrapper.product-item' },
+   { url: 'https://www.blacknoble.com/erkek?currency=try', pageSelector:'.js-product-wrapper.product-item' },
 ]
+
+//blacknoble
