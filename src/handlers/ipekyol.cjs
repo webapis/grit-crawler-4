@@ -1,5 +1,5 @@
 
-async function extractor(page, context) {
+async function handler(page, context) {
 
     const url = await page.url()
 debugger
@@ -14,15 +14,15 @@ debugger
         const items = Array.from(document.querySelectorAll('[data-product-id]'))
         return items.map(document => {
                 try {
-                    const priceNew =  document.querySelector('.urunListe_satisFiyat').innerText.replace('₺', '').trim()
-                    const link = document.querySelector('.prd-lnk').href
+                  //  const priceNew =  document.querySelector('.urunListe_satisFiyat').innerText.replace('₺', '').trim()
+                  //  const link = document.querySelector('.prd-lnk').href
                     const imageUrl = document.querySelector('[data-image-src]').getAttribute('data-image-src')
            
                     return {
-                        title: 'ipekyol ' + document.querySelector('.prd-name span').innerHTML.replace(/İ/g, 'i').toLowerCase(),
-                        priceNew,
+                  //      title: 'ipekyol ' + document.querySelector('.prd-name span').innerHTML.replace(/İ/g, 'i').toLowerCase(),
+                      //  priceNew,
                         imageUrl,
-                        link,
+                     //   link,
                         timestamp: Date.now(),
                         marka: 'ipekyol',
                     }   
@@ -69,5 +69,5 @@ const hostname='https://www.ipekyol.com.tr/'
 const exclude=[]
 const postFix =''
 
-module.exports = { extractor, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
+module.exports = { handler, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
 
