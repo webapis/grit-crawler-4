@@ -1,4 +1,4 @@
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 
 //const {linkExtractor}=require('../../utils/linkExtractor')
 const initValues ={
@@ -20,7 +20,7 @@ async function handler(page,context) {
     //     await linkExtractor({...initValues,linkSelector:'.MuiAccordion-region a',candidateSelector:'.MuiAccordionSummary-expandIconWrapper',page,context,action:'click'})
     // }
 
-   await autoScroll(page)
+  // await autoScroll(page)
 
 
 debugger

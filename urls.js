@@ -41,6 +41,6 @@ export default [
  { url: 'https://www.elleshoes.com/erkek',selector:'.kategoriLink a', pageSelector:'.productItem' },
  { url: 'https://www.elleshoes.com/kadin-deri-ceket',selector:'.kategoriLink a', pageSelector:'.productItem' },
  { url: 'https://www.elleshoes.com/erkek-deri-ceket',selector:'.kategoriLink a', pageSelector:'.productItem' },
- { url: 'https://exquise.com/',selector:'.infinite-scroll-component__outerdiv', pageSelector:'.product-list article' },
+ { url: 'https://exquise.com/',selector:'nav a', pageSelector:'.product-list article' },
 ]
 
