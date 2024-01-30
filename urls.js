@@ -43,5 +43,6 @@ export default [
  { url: 'https://www.elleshoes.com/erkek-deri-ceket',selector:'.kategoriLink a', pageSelector:'.productItem' },
  { url: 'https://exquise.com/',selector:'nav a', pageSelector:'.product-list article' },
  { url: 'https://www.fashionfriends.com/',selector:'.navigation a', pageSelector:'.ItemOrj' },
+ { url: 'https://www.gizia.com',selector:'#mainMenu a', pageSelector:'#mainColumn' },
 ]
 
