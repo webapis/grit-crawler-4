@@ -1,5 +1,5 @@
 
-async function extractor(page) {
+async function handler(page) {
 
 
 
@@ -56,4 +56,4 @@ const hostname='https://www.kipling.com.tr/'
 const exclude=[]
 const postFix =''
 
-module.exports = { extractor, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
+module.exports = { handler, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
