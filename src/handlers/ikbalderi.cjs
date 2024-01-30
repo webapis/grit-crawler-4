@@ -1,6 +1,6 @@
 
 
-async function extractor(page) {
+async function handler(page) {
 
     const data = await page.$$eval('.product-small', (productCards) => {
         return productCards.map(document => {
@@ -58,5 +58,5 @@ const hostname='https://ikbalderi.com/'
 const exclude=[]
 const postFix =''
 
-module.exports = { extractor, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
+module.exports = { handler, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
 
