@@ -1,4 +1,4 @@
-async function extractor(page) {
+async function handler(page) {
 
     await page.waitForSelector('.product-grid .product-card')
     debugger
@@ -11,10 +11,10 @@ async function extractor(page) {
                 ProductDescription: title,
             } = item
             return {
-                title: 'lcwaikiki '+title.replace(/İ/g,'i').toLowerCase(),
-                priceNew: priceNew.replace('TL', '').trim(),
+              //  title: 'lcwaikiki '+title.replace(/İ/g,'i').toLowerCase(),
+              //  priceNew: priceNew.replace('TL', '').trim(),
                 imageUrl,
-                link: 'https://www.lcwaikiki.com/'+ModelUrl.substring(1),
+              //  link: 'https://www.lcwaikiki.com/'+ModelUrl.substring(1),
                 timestamp: Date.now(),
                 marka: 'lcwaikiki',
             }
@@ -53,4 +53,4 @@ const hostname='https://www.lcwaikiki.com/tr-TR/TR'
 const exclude=[]
 const postFix =''
 
-module.exports = { extractor, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
+module.exports = { handler, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }

@@ -1,7 +1,7 @@
 export default [
     { url: 'https://www.defacto.com.tr/statik/sitemap', selector: '.page-body-content-sitemap a',pageSelector:".catalog-products" },
 
-    { url: 'https://www.lcwaikiki.com/tr-TR/TR/site-haritasi', selector: '.sitemap a' },
+
 
     { url: 'https://www.abiyefon.com/', selector: '#topMainMenu a',pageSelector:'.products' },
     { url: 'https://www.addax.com.tr/', selector: '#MainMenu a', pageSelector:'.Prd' },
@@ -54,5 +54,6 @@ export default [
  { url: 'https://www.kipling.com.tr/',selector:'ul.new-main-menu a', pageSelector:'.product.product--zoom' },
  { url: 'https://www.koton.com/site-haritasi',selector:'.site-map__list a', pageSelector:'.product-item__body' },
  { url: 'https://www.lacht.com.tr/',selector:'section.menu a', pageSelector:'.card-product' },
+ { url: 'https://www.lcwaikiki.com/tr-TR/TR/site-haritasi', selector: '.sitemap a', pageSelector:'.product-grid' },
 ]
 
