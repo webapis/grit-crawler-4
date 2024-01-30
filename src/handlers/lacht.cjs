@@ -1,6 +1,6 @@
 
 //const {autoScroll}=require('../../utils/autoscroll')
-async function extractor(page) {
+async function handler(page) {
 
    // await autoScroll(page)
     const data = await page.$$eval('.card-product', (productCards) => {
@@ -56,4 +56,4 @@ const hostname='https://www.lacht.com.tr/'
 const exclude=[]
 const postFix =''
 
-module.exports = { extractor, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
+module.exports = { handler, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }

@@ -53,5 +53,6 @@ export default [
  { url: 'https://tr.kikiriki.com/',selector:'.main-menu a', pageSelector:'.product-list-item' },
  { url: 'https://www.kipling.com.tr/',selector:'ul.new-main-menu a', pageSelector:'.product.product--zoom' },
  { url: 'https://www.koton.com/site-haritasi',selector:'.site-map__list a', pageSelector:'.product-item__body' },
+ { url: 'https://www.lacht.com.tr/',selector:'section.menu a', pageSelector:'.card-product' },
 ]
 
