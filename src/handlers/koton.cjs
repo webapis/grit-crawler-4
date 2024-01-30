@@ -1,35 +1,38 @@
 
-const {autoScroll}=require('../../utils/autoscroll')
-async function extractor(page) {
+//const {autoScroll}=require('../../utils/autoscroll')
+async function handler(page) {
 
 
 
-  await autoScroll(page);
+ // await autoScroll(page);
+debugger
 
-
-  const data = await page.$$eval('.list__products .product-item', (productCards) => {
+  const data = await page.$$eval('.product-item__body', (productCards) => {
     return productCards.map(document => {
 try {
     const imageUrl = document.querySelector('.pz-image-placeholder source').srcset
-    const title = document.querySelector('.product-item__info-name a').innerHTML.trim()
-    const priceNew = document.querySelector('.product-item__info-price pz-price').innerText.replace('TL','').trim()
-    const link = document.querySelector('.product-item__info-name a').href
+ //   const title = document.querySelector('.product-item__info-name a').innerHTML.trim()
+  // const priceNew = document.querySelector('.product-item__info-price pz-price').innerText.replace('TL','').trim()
+//    const link = document.querySelector('.product-item__info-name a').href
 
 
     return {
-        title: 'koton ' + title.replace(/İ/g,'i').toLowerCase(),
-        priceNew,
+     //   title: 'koton ' + title.replace(/İ/g,'i').toLowerCase(),
+    //    priceNew,
         imageUrl,
-        link,
+     //   link,
         timestamp: Date.now(),
         marka: 'koton',
-    } 
+    }
+    
+    debugger
 } catch (error) {
     return {error:error.toString(),content:document.innerHTML}
 }
 
     })
 })
+debugger
 return  data
 }
 
@@ -63,4 +66,4 @@ const hostname='https://www.koton.com/'
 const exclude=[]
 const postFix =''
 
-module.exports = { extractor, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
+module.exports = { handler, getUrls }

@@ -52,5 +52,6 @@ export default [
  { url: 'https://www.kigili.com/',selector:'.navigation a', pageSelector:'.product-item-wrapper' },
  { url: 'https://tr.kikiriki.com/',selector:'.main-menu a', pageSelector:'.product-list-item' },
  { url: 'https://www.kipling.com.tr/',selector:'ul.new-main-menu a', pageSelector:'.product.product--zoom' },
+ { url: 'https://www.koton.com/site-haritasi',selector:'.site-map__list a', pageSelector:'.product-item__body' },
 ]
 
