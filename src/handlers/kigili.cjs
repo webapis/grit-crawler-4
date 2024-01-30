@@ -1,5 +1,5 @@
 
-const {linkExtractor}=require('../../utils/linkExtractor')
+//const {linkExtractor}=require('../../utils/linkExtractor')
 const initValues ={
      productPageSelector:'.list-content',
      linkSelector:'.navigation a',
@@ -10,10 +10,10 @@ const initValues ={
     
 }
 
-const {autoScroll}=require('../../utils/autoscroll')
-async function extractor(page,context) {
-    await linkExtractor({...initValues,linkSelector:'.navigation__submenu__item__title',candidateSelector:'.navigation__item',page,context,action:'hover'})
-   await autoScroll(page)
+//const {autoScroll}=require('../../utils/autoscroll')
+async function handler(page,context) {
+  // await linkExtractor({...initValues,linkSelector:'.navigation__submenu__item__title',candidateSelector:'.navigation__item',page,context,action:'hover'})
+   //await autoScroll(page)
     debugger
     const data = await page.$$eval('.product-item-wrapper', (productCards) => {
         return productCards.map(document => {
@@ -71,4 +71,4 @@ async function getUrls(page) {
     return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 }
 }
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
