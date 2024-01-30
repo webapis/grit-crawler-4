@@ -1,5 +1,5 @@
 
-async function extractor(page) {
+async function handler(page) {
  
     debugger;
     const data = await page.$$eval('.Prd', (productCards) => {
@@ -48,4 +48,4 @@ const hostname='https://www.jimmykey.com/tr/'
 const exclude=[]
 const postFix =''
 
-module.exports = { extractor, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }
+module.exports = { handler, getUrls,productPageSelector,linkSelector,linksToRemove,hostname ,exclude,postFix }

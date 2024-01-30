@@ -48,5 +48,6 @@ export default [
  { url: 'https://www.hotic.com.tr/',selector:'nav.navbar a', pageSelector:'.item-grid' },
  { url: 'https://ikbalderi.com/',selector:'.nav a', pageSelector:'.products' },
  { url: 'https://www.ipekyol.com.tr/',selector:'.menu.main-menu a', pageSelector:'[data-product-id]' },
+ { url: 'https://www.jimmykey.com/tr/',selector:'nav#MainMenu a', pageSelector:'.Prd' },
 ]
 
