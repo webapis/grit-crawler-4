@@ -1,6 +1,6 @@
 
 
-const {linkExtractor}=require('../../utils/linkExtractor.cjs')
+//const {linkExtractor}=require('../../utils/linkExtractor.cjs')
 const initValues ={
      productPageSelector:'.fl.col-12.catalogWrapper',
      linkSelector:'.drop-down-title a',

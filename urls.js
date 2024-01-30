@@ -44,5 +44,6 @@ export default [
  { url: 'https://exquise.com/',selector:'nav a', pageSelector:'.product-list article' },
  { url: 'https://www.fashionfriends.com/',selector:'.navigation a', pageSelector:'.ItemOrj' },
  { url: 'https://www.gizia.com',selector:'#mainMenu a', pageSelector:'#mainColumn' },
+ { url: 'https://www2.hm.com/tr_tr/productpage.1135056011.html',selector:'nav a', pageSelector:'.product-item' },
 ]
 
