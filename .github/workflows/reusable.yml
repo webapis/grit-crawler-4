@@ -65,7 +65,7 @@ jobs:
         id: collection
         run: node src/main.js
       - name: categorize data
-        id: algolia
+        id: categorize
         run: node utils/categorizeData.js
       - name: upload data
         id: algolia
