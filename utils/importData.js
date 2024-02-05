@@ -1,11 +1,12 @@
 import { createRequire } from 'module';
-import {Dataset } from 'crawlee';
+
 const require = createRequire(import.meta.url);
 require("dotenv").config();
 const algoliasearch = require("algoliasearch");
 
 const client = algoliasearch("7JF244QSZZ", process.env.ALGOLIAKEY);
 const marka = process.env.marka
+const data =require('../data.json')
 function setSettings(index) {
   return new Promise((resolve, reject) => {
     try {
@@ -54,12 +55,10 @@ debugger
   });
 }
 
-const dataDataset = await Dataset.open('brands');
-const { items} = await dataDataset.getData();
-debugger
-console.log('items---',items)//
-if(items.length>0){
-  await importLinkData({data:items.map(m=>{return {...m,brand:marka}}),brand:marka })
+
+
+if(data.length>0){
+  await importLinkData({data:data.map(m=>{return {...m,brand:marka}}),brand:marka })
 }else{
   throw 'No Items found to upload'
 }
