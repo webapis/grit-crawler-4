@@ -55,5 +55,6 @@ export default [
  { url: 'https://www.koton.com/site-haritasi',selector:'.site-map__list a', pageSelector:'.product-item__body' },
  { url: 'https://www.lacht.com.tr/',selector:'section.menu a', pageSelector:'.card-product' },
  { url: 'https://www.lcwaikiki.com/tr-TR/TR/site-haritasi', selector: '.sitemap a', pageSelector:'.product-grid' },
+ //{ url: 'https://www.levis.com.tr/', selector: '.main-links a', pageSelector:'[data-js="p-item"]' },
 ]
 

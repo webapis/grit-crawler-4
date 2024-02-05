@@ -1,5 +1,5 @@
 //main-links
-const {linkExtractor}=require('../../utils/linkExtractor')
+//const {linkExtractor}=require('../../utils/linkExtractor')
 const initValues ={
      productPageSelector:'.product-listing',
      linkSelector:'.main-links a',
@@ -8,14 +8,14 @@ const initValues ={
      exclude:[],
      postFix :'',
 }
-async function extractor(page,context) {
+async function handler(page,context) {
         const alisverisBtn =await page.$('[data-js="menu-main-link"]')
         if(alisverisBtn){
             await page.click('[data-js="menu-main-link"]')
             debugger
             await page.waitForSelector('[data-js="mp-links"]');
             debugger
-            await linkExtractor({...initValues, linkSelector:'[data-js="mp-tab-sub-link"]',candidateSelector:'.menu-panel .mp-links .js-active a[data-js="mp-tab-link"]',page,context,action:'click'})
+         //   await linkExtractor({...initValues, linkSelector:'[data-js="mp-tab-sub-link"]',candidateSelector:'.menu-panel .mp-links .js-active a[data-js="mp-tab-link"]',page,context,action:'click'})
         }
         // const closeBtn = await page.$('[data-js="btn-close-menu]')
         // if(closeBtn){
@@ -67,4 +67,4 @@ async function getUrls(page) {
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
