@@ -7,9 +7,25 @@ const dataset = await Dataset.open('brands');
 const require = createRequire(import.meta.url);
 require('dotenv').config()
 const marka = process.env.marka
-router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { start, selector, pageSelector }, url }, page }) => {
+router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { start, selector, pageSelector, selectorHover, action }, url }, page }) => {
     log.info(`enqueueing new URLs ${url}`);
     debugger
+    if (selectorHover) {
+        const navigationItems = await page.$$(selectorHover);
+        debugger
+        if (navigationItems && navigationItems.length > 0) {
+            for (const navigationItem of navigationItems) {
+                if (action === 'hover') {
+                    await navigationItem.hover();
+                }
+                if (action === 'click') {
+                    await navigationItem.click();
+                }
+            }
+        }
+    }
+
+
 
     const result = await enqueueLinks({
         selector,
@@ -75,8 +91,8 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 
             if (errorPercentate < 5) {
 
-        
-          
+
+
                 await dataset.pushData({
                     url: request.loadedUrl,
                     title,

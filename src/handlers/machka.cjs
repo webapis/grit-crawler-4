@@ -1,5 +1,5 @@
 
-const {linkExtractor}=require('../../utils/linkExtractor')
+//const {linkExtractor}=require('../../utils/linkExtractor')
 //const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
      productPageSelector:'.ems-prd-list',
@@ -11,11 +11,11 @@ const initValues ={
 }
 
 
-async function extractor(page, context) {
+async function handler(page, context) {
 
 
     debugger
-    await linkExtractor({...initValues,linkSelector:'.selected a',candidateSelector:'.modal-body [href="javascript:void(0);"]',page,context,action:'click'})
+  //  await linkExtractor({...initValues,linkSelector:'.selected a',candidateSelector:'.modal-body [href="javascript:void(0);"]',page,context,action:'click'})
 
     debugger
 
@@ -70,4 +70,4 @@ async function getUrls(page) {
 
     return { pageUrls, productCount:0, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }

@@ -12,7 +12,7 @@ const initValues ={
 
 
 
-async function extractor(page) {
+async function handler(page) {
 
 
     const {isoCode,idShop,family,idSection,columnsPerRow,optionalParams:{idSubSection}} = await page.evaluate(()=>{
@@ -50,4 +50,4 @@ async function getUrls(page) {
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }

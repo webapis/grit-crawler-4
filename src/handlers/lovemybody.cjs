@@ -1,5 +1,5 @@
 
-const {linkExtractor}=require('../../utils/linkExtractor')
+//const {linkExtractor}=require('../../utils/linkExtractor')
 const initValues ={
      productPageSelector:'.list-content',
      linkSelector:'.navigation a',
@@ -11,10 +11,10 @@ const initValues ={
 
 
 
-async function extractor(page,context) {
+async function handler(page,context) {
 
     
-    await linkExtractor({...initValues,candidateSelector:'.navigation__item',page,context,action:'hover'})
+  //  await linkExtractor({...initValues,candidateSelector:'.navigation__item',page,context,action:'hover'})
     debugger
     await page.waitForTimeout(5000);
    
@@ -78,4 +78,4 @@ if(nextPage){
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
