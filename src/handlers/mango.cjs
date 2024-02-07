@@ -1,7 +1,7 @@
 
 //const {autoScroll}=require('../../utils/autoscroll')
 async function handler(page) {
-
+await page.waitForTimeout(5000)
     await page.waitForSelector('.catalog')
 
     // await autoScroll(page);
