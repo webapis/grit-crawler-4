@@ -1,65 +1,53 @@
+const fetch =require('node-fetch')
 
-//const {autoScroll}=require('../../utils/autoscroll')
+
+const initValues ={
+     productPageSelector:'.catalog',
+     linkSelector:'#sitemap a',
+     linksToRemove:[],
+     hostname:'https://shop.mango.com/',
+     exclude:[],
+     postFix:''
+}
+
+
+
 async function handler(page) {
-await page.waitForTimeout(5000)
-    await page.waitForSelector('.catalog')
 
-    // await autoScroll(page);
-   debugger
-   
-     const data = await page.$$eval("img[data-testid]", (productCards) => {
-       return productCards.map(document => {
-   try {
-       const imageUrl = document.src
-    //   const title = document.querySelector('.product-item__info-name a').innerHTML.trim()
-     // const priceNew = document.querySelector('.product-item__info-price pz-price').innerText.replace('TL','').trim()
-   //    const link = document.querySelector('.product-item__info-name a').href
-   
-   
-       return {
-        //   title: 'koton ' + title.replace(/İ/g,'i').toLowerCase(),
-       //    priceNew,
-           imageUrl,
-        //   link,
-           timestamp: Date.now(),
-           marka: 'mango',
-       }
-       
-       debugger
-   } catch (error) {
-       return {error:error.toString(),content:document.innerHTML}
-   }
-   
-       })
-   })
-   debugger
-   return  data
-   }
-   
-   
-   
-   
-   async function getUrls(page) {
-     const url = await page.url();
-     // await page.waitForSelector('.result.-only-desktop')
-     // const productCount = await page.$eval('.result.-only-desktop', element => parseInt(element.textContent.replace(/[^\d]/g, "")))
-     // const totalPages = Math.ceil(productCount / 59)
-     const pageUrls = [];
-   
-     // let pagesLeft = totalPages
-     // for (let i = 1; i <= totalPages; i++) {
-   
-     //     if (pagesLeft > 0) {
-   
-     //         pageUrls.push(`${url}?page=` + i)
-     //         --pagesLeft
-     //     }
-   
-     // }
-   
-     return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 };
-   }
- 
-   
-   module.exports = { handler, getUrls }
-   
+
+    const {isoCode,idShop,family,idSection,columnsPerRow,optionalParams:{idSubSection}} = await page.evaluate(()=>{
+        return window.viewObjectsJson['catalogParameters']
+    })
+
+debugger
+const productUrl = `https://shop.mango.com/services/productlist/products/${isoCode}/${idShop}/${idSection}/?pageNum=1&rowsPerPage=1000&columnsPerRow=4`
+debugger
+    const response =await fetch(productUrl)
+debugger
+const jsonData =await response.json()
+debugger
+
+const data = Object.values( jsonData.groups[0].garments).map(m=>m.colors).flat().map(m=>{
+    
+    const imageUrl=m.images[0].img1Src
+    return {
+    imageUrl:imageUrl.substring(imageUrl),
+    title:'mango '+m.images[0].
+    altText,
+    priceNew:m.price. salePriceNoCurrency,
+    link: "https://shop.mango.com"+ m.linkAnchor,
+
+    timestamp: Date.now(),
+    marka: 'mango',
+}})
+debugger
+return data
+}
+
+async function getUrls(page) {
+
+    return { pageUrls: [], productCount: 0, pageLength: 0 }
+}
+
+
+module.exports = { handler, getUrls,...initValues }
