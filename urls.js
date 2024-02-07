@@ -58,9 +58,7 @@ export default [
  //{ url: 'https://www.levis.com.tr/', selector: '.main-links a', pageSelector:'[data-js="p-item"]' },
  { url: 'https://www.lovemybody.com.tr/', selector: '.navigation a', pageSelector:'.product-item-box',selectorHover:'.mobile-navigation-icon',action:'hover' },
  { url: 'https://www.machka.com.tr/', selector: '.no-sub a', pageSelector:'.category-title',selectorHover:'.modal-body ul [href="javascript:void(0);"]',action:'click' },
- { url: 'https://shop.mango.com/tr/kadin', selector: '.vsv-list a', pageSelector:'#catalogProductsList' },
-  { url: 'https://shop.mango.com/tr/cocuk', selector: '.vsv-list a', pageSelector:'#catalogProductsList' },
- { url: 'https://shop.mango.com/tr/erkek', selector: '.vsv-list a', pageSelector:'#catalogProductsList' },
- { url: 'https://shop.mango.com/tr/teen', selector: '.vsv-list a', pageSelector:'#catalogProductsList' },
+ { url: 'https://shop.mango.com/tr/sitemap', selector: '.site-map-category a', pageSelector:'.catalog' },
+
 ]
 

@@ -2,15 +2,15 @@
 //const {autoScroll}=require('../../utils/autoscroll')
 async function handler(page) {
 
-
+    await page.waitForSelector('.catalog')
 
     // await autoScroll(page);
    debugger
    
-     const data = await page.$$eval('[data-testid="plp.product.figure"]', (productCards) => {
+     const data = await page.$$eval("img[data-testid]", (productCards) => {
        return productCards.map(document => {
    try {
-       const imageUrl = document.querySelector('img').src
+       const imageUrl = document.src
     //   const title = document.querySelector('.product-item__info-name a').innerHTML.trim()
      // const priceNew = document.querySelector('.product-item__info-price pz-price').innerText.replace('TL','').trim()
    //    const link = document.querySelector('.product-item__info-name a').href
