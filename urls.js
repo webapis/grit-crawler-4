@@ -74,5 +74,6 @@ export default [
  { url: 'https://www.perspective.com.tr/', selector: '#MainMenu a', pageSelector:'.ProductList' },
  { url: 'https://www.pierrecardin.com.tr', selector: '.header__navigation a', pageSelector:'.product__listing' },
  { url: 'https://tr.puma.com/site-haritasi', selector: '.sitemap a', pageSelector:'.products-grid' },
+ { url: 'https://quzu.com.tr/', selector: '.menu-list a', pageSelector:'.product-grid' },
 ]
 

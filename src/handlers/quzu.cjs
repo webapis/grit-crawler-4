@@ -1,4 +1,4 @@
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
     productPageSelector:'.product-grid',
     linkSelector:'.menu-list a',
@@ -7,16 +7,16 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
 
     const url = await page.url()
     debugger
-    const acceptcookies = await page.$('.seg-popup-close')
-    if (acceptcookies) {
-        await page.click('.seg-popup-close')
-    }
+    // const acceptcookies = await page.$('.seg-popup-close')
+    // if (acceptcookies) {
+    //     await page.click('.seg-popup-close')
+    // }
 
-    await autoScroll(page)
+   // await autoScroll(page)
     debugger
                     const data = await page.$$eval('.card', (productCards,url) => {
                         try {
@@ -51,5 +51,5 @@ async function getUrls(page) {
 
     return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
 
