@@ -66,5 +66,6 @@ export default [
  { url: 'https://miostil.com/', selector: '.mobile-menu.dropdown-menu a', pageSelector:'.product-grid' },
  { url: 'https://www.network.com.tr/', selector: '.navbar a', pageSelector:'#products' },
  { url: 'https://www.nike.com/', selector: '.pre-desktop-menu a', pageSelector:'.product-card' },
+ { url: 'https://www.nu.com.tr/', selector: '.main-navigation a', pageSelector:'#CollectionProductGrid' },
 ]
 
