@@ -71,5 +71,6 @@ export default [
  { url: 'https://www.oxxo.com.tr/', selector: '#MainMenu a', pageSelector:'.ProductList' },
  { url: 'https://www.panco.com.tr/', selector: '.navigation a', pageSelector:'.js-list-products' },
  { url: 'https://www.penti.com/tr/', selector: '.sub a', pageSelector:'.products' },
+ { url: 'https://www.perspective.com.tr/', selector: '#MainMenu a', pageSelector:'.ProductList' },
 ]
 
