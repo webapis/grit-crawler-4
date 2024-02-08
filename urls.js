@@ -63,5 +63,6 @@ export default [
  { url: 'https://www.markapia.com/', selector: 'div.items-center a', pageSelector:'.catalogWrapper' },
  { url: 'https://www.matras.com/', selector: '.open-sub a', pageSelector:'.product_box' },
  { url: 'https://www.mavi.com/site-haritasi', selector: 'a', pageSelector:'.product-list-cards' },
+ { url: 'https://miostil.com/', selector: '.mobile-menu.dropdown-menu a', pageSelector:'.product-grid' },
 ]
 

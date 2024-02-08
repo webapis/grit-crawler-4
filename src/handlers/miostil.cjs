@@ -1,4 +1,4 @@
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
     productPageSelector:'.product-grid',
     linkSelector:'.ddd',
@@ -7,13 +7,13 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
 
     debugger;
     const url = await page.url()
 
 
-    await autoScroll(page)
+  //  await autoScroll(page)
     debugger;
     const data = await page.$$eval('.product-item', (items,url) => {
 
@@ -64,4 +64,4 @@ if(nextPage){
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
