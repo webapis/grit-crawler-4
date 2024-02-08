@@ -67,5 +67,7 @@ export default [
  { url: 'https://www.network.com.tr/', selector: '.navbar a', pageSelector:'#products' },
  { url: 'https://www.nike.com/', selector: '.pre-desktop-menu a', pageSelector:'.product-card' },
  { url: 'https://www.nu.com.tr/', selector: '.main-navigation a', pageSelector:'#CollectionProductGrid' },
+ //{ url: 'https://olegcassini.com.tr/', selector: '.nav-links a', pageSelector:'[data-id]' },
+ { url: 'https://www.oxxo.com.tr/', selector: '#MainMenu a', pageSelector:'.ProductList' },
 ]
 

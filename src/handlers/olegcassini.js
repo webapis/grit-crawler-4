@@ -1,5 +1,5 @@
 
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
     productPageSelector:'.desktop-filters',
     linkSelector:'.nav-links a',
@@ -8,11 +8,11 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
 //sell-price
     const url = await page.url()
 debugger
-await autoScroll(page)
+//await autoScroll(page)
                               const data = await page.$$eval('[data-id]', (productCards,url) => {
                                 try {
                                     return productCards.map(document => {
@@ -55,4 +55,4 @@ async function getUrls(page) {
 
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }

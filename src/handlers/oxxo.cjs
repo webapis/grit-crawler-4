@@ -1,6 +1,6 @@
 
 
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 
 const initValues ={
     productPageSelector:'.ProductList',
@@ -11,11 +11,11 @@ const initValues ={
     postFix:''
   }
 
-async function extractor(page) {
+async function handler(page) {
 
     const url = await page.url()
 
-    await autoScroll(page);
+   // await autoScroll(page);
 
     const data = await page.$$eval('.Prd', (productCards,url) => {
         return productCards.map(productCard => {
@@ -47,7 +47,7 @@ async function getUrls(page) {
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
 
 
 
