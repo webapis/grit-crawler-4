@@ -73,5 +73,6 @@ export default [
  { url: 'https://www.penti.com/tr/', selector: '.sub a', pageSelector:'.products' },
  { url: 'https://www.perspective.com.tr/', selector: '#MainMenu a', pageSelector:'.ProductList' },
  { url: 'https://www.pierrecardin.com.tr', selector: '.header__navigation a', pageSelector:'.product__listing' },
+ { url: 'https://tr.puma.com/site-haritasi', selector: '.sitemap a', pageSelector:'.products-grid' },
 ]
 
