@@ -12,7 +12,7 @@ import urls from "../urls.js"
 
 const marka = process.env.marka
 const crawler = new PuppeteerCrawler({
-    // headless: false,
+     //headless: false,
     // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] }),
     requestList: await RequestList.open(null, urls.filter(f => f.url.includes(marka)).map(m => { return { url: m.url, userData: { start: true, selector: m.selector, pageSelector: m.pageSelector, selectorHover: m.selectorHover, action: m.action } } })),
     requestHandler: router,

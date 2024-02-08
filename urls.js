@@ -61,5 +61,7 @@ export default [
  { url: 'https://shop.mango.com/tr/sitemap', selector: 'a.site-map-item', pageSelector:'.catalog' },
  { url: 'https://www.manuka.com.tr/', selector: '#mainMenu a', pageSelector:'.catalogWrapper' },
  { url: 'https://www.markapia.com/', selector: 'div.items-center a', pageSelector:'.catalogWrapper' },
+ { url: 'https://www.matras.com/', selector: '.open-sub a', pageSelector:'.product_box' },
+ { url: 'https://www.mavi.com/site-haritasi', selector: 'a', pageSelector:'.product-list-cards' },
 ]
 

@@ -7,7 +7,7 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
     const url = await page.url()
 //await autoScroll(page)
   
@@ -59,4 +59,4 @@ async function getUrls(page) {
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
