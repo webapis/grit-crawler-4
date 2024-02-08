@@ -59,6 +59,7 @@ export default [
  { url: 'https://www.lovemybody.com.tr/', selector: '.navigation a', pageSelector:'.product-item-box',selectorHover:'.mobile-navigation-icon',action:'hover' },
  { url: 'https://www.machka.com.tr/', selector: '.no-sub a', pageSelector:'.category-title',selectorHover:'.modal-body ul [href="javascript:void(0);"]',action:'click' },
  { url: 'https://shop.mango.com/tr/sitemap', selector: 'a.site-map-item', pageSelector:'.catalog' },
-
+ { url: 'https://www.manuka.com.tr/', selector: '#mainMenu a', pageSelector:'.catalogWrapper' },
+ { url: 'https://www.markapia.com/', selector: 'div.items-center a', pageSelector:'.catalogWrapper' },
 ]
 

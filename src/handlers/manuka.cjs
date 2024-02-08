@@ -1,5 +1,5 @@
 
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
   productPageSelector:'.catalogWrapper',
   linkSelector:'#mainMenu a',
@@ -8,17 +8,17 @@ const initValues ={
   exclude:[],
   postFix:''
 }
-async function extractor(page) {
+async function handler(page) {
 
 
 
-  await page.click('.dropdown a')
+ // await page.click('.dropdown a')
   debugger
-  await page.click('span[value="tr"]')
+//  await page.click('span[value="tr"]')
+///  debugger
+//  await page.waitForNavigation()
   debugger
-  await page.waitForNavigation()
-  debugger
-    await autoScroll(page);
+    //await autoScroll(page);
     debugger;
   
     const data = await page.$$eval(".catalogWrapper .productItem", (productCards) => {
@@ -50,4 +50,4 @@ async function extractor(page) {
   
     return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 };
   }
-  module.exports = { extractor, getUrls,...initValues }
+  module.exports = { handler, getUrls,...initValues }

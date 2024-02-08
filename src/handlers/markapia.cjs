@@ -7,25 +7,25 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
 
     const url = await page.url()
     await autoScroll(page)
     debugger
 
-    const data = await page.$$eval('[data-id]', (productCards,url) => {
+    const data = await page.$$eval('.group.relative.flex.h-full.w-full.grow.cursor-pointer.flex-col.bg-white', (productCards,url) => {
         return productCards.map(document => {
 try {
     const imageUrl =document.querySelector('[srcset]')? Array.from(document.querySelector('[srcset]').getAttribute('srcset').split(',') ).find((f,i)=>i===10).trim().split(' ')[0]:null
-    const title = document.querySelector('.product-name').innerText
-    const priceNew = Array.from(document.querySelectorAll('.discount-price span')).reverse()[0].innerText.replace('₺','').trim()
-    const link = document.querySelector('a').href
+  //  const title = document.querySelector('.product-name').innerText
+   // const priceNew = Array.from(document.querySelectorAll('.discount-price span')).reverse()[0].innerText.replace('₺','').trim()
+   // const link = document.querySelector('a').href
 
     return {
-        title: 'markapia ' + title.replace(/İ/g, 'i').toLowerCase(),
-        priceNew,
+        //title: 'markapia ' + title.replace(/İ/g, 'i').toLowerCase(),
+      //  priceNew,
         imageUrl,
-        link,
+    //    link,
         timestamp: Date.now(),
         marka: 'markapia',
     }
@@ -62,4 +62,4 @@ async function getUrls(page) {
 
     return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
