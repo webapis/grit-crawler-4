@@ -69,5 +69,6 @@ export default [
  { url: 'https://www.nu.com.tr/', selector: '.main-navigation a', pageSelector:'#CollectionProductGrid' },
  //{ url: 'https://olegcassini.com.tr/', selector: '.nav-links a', pageSelector:'[data-id]' },
  { url: 'https://www.oxxo.com.tr/', selector: '#MainMenu a', pageSelector:'.ProductList' },
+ { url: 'https://www.panco.com.tr/', selector: '.navigation a', pageSelector:'.js-list-products' },
 ]
 
