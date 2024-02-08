@@ -22,18 +22,18 @@ debugger
 
             try {
              //   const title = document.querySelector('.product-link').getAttribute('aria-label')
-                const imageUrl = document.querySelector('[data-lazy-bgset-src]')? 'https:'+ document.querySelector('[data-lazy-bgset-src]').getAttribute('data-lazy-bgset-src'):"https:"+ document.querySelector('.product-link [data-srcset]').getAttribute('data-srcset').split(',')[5].trim().split(' ')[0]
+                const imageUrl = document.querySelector('[srcset]')? document.querySelector('[srcset]').getAttribute('srcset').split(',')[0].split(' ')[0]:document.querySelector('[data-manual-srcset]').getAttribute('data-manual-srcset').split(',')[0].split(' ')[0]
              //   const priceNew = document.querySelector('.product-price__item').innerText.replaceAll('\n','').replace("TL",'')
             //    const link = document.querySelector('.product-link').href
     
                 return {
                  //   title: 'sementa ' + title.replace(/İ/g, 'i').toLowerCase(),
                 //    priceNew: priceNew,
-                    imageUrl,
+                    imageUrl: 'https:'+imageUrl,
                 //    link,
                     timestamp: Date.now(),
                     marka: 'sementa',
-    
+                   
                 }      
             } catch (error) {
                 return {error:error.toString(),url,content:document.innerHTML}
