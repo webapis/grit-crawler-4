@@ -1,5 +1,5 @@
 
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
   productPageSelector:'.catalogWrapper',
   linkSelector:'#mainMenu a',
@@ -8,23 +8,23 @@ const initValues ={
   exclude:[],
   postFix:''
 }
-async function extractor(page) {
+async function handler(page) {
 
         const url = await page.url()
-        await autoScroll(page)
+     //   await autoScroll(page)
           const data = await page.$$eval('.productItem', (productCards,url) => {
             return productCards.map(document => {
               try {
-                   const imageUrl = document.querySelector('span[itemprop="image"]').getAttribute('content')
-                   const title = document.querySelector('span[itemprop="name"]').getAttribute('content')
-                   const priceNew = document.querySelector('.discount-in-basket-price span')? document.querySelector('.discount-in-basket-price span').innerText.replace('₺',''):document.querySelector('.currentPrice').innerText.replace('₺','').trim()
-                   const link ="https://sarar.com/"+ document.querySelector('span[itemprop="url"]').getAttribute('content')
+                   const imageUrl = document.querySelector('.imgInner img').src
+                //   const title = document.querySelector('span[itemprop="name"]').getAttribute('content')
+              //     const priceNew = document.querySelector('.discount-in-basket-price span')? document.querySelector('.discount-in-basket-price span').innerText.replace('₺',''):document.querySelector('.currentPrice').innerText.replace('₺','').trim()
+              //     const link ="https://sarar.com/"+ document.querySelector('span[itemprop="url"]').getAttribute('content')
 
                   return {
-                       title: 'sarar ' + title.replace(/İ/g,'i').toLowerCase(),
-                       priceNew,
+                   //    title: 'sarar ' + title.replace(/İ/g,'i').toLowerCase(),
+                   //    priceNew,
                        imageUrl,
-                       link,
+                     //  link,
                        timestamp: Date.now(),
                        marka: 'sarar',
                   }
@@ -62,4 +62,4 @@ async function extractor(page) {
     
         return { pageUrls, productCount:0, pageLength: pageUrls.length + 1 }
     }
-    module.exports = { extractor, getUrls,...initValues }
+    module.exports = { handler, getUrls,...initValues }

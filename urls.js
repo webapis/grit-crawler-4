@@ -76,5 +76,6 @@ export default [
  { url: 'https://tr.puma.com/site-haritasi', selector: '.sitemap a', pageSelector:'.products-grid' },
  { url: 'https://quzu.com.tr/', selector: '.menu-list a', pageSelector:'.product-grid' },
  { url: 'https://www.roman.com.tr/', selector: '#main-menu a', pageSelector:'.product-detail-card' },
+ { url: 'https://sarar.com/', selector: '#mainMenu a', pageSelector:'.catalogWrapper' },
 ]
 
