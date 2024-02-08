@@ -70,5 +70,6 @@ export default [
  //{ url: 'https://olegcassini.com.tr/', selector: '.nav-links a', pageSelector:'[data-id]' },
  { url: 'https://www.oxxo.com.tr/', selector: '#MainMenu a', pageSelector:'.ProductList' },
  { url: 'https://www.panco.com.tr/', selector: '.navigation a', pageSelector:'.js-list-products' },
+ { url: 'https://www.penti.com/tr/', selector: '.sub a', pageSelector:'.products' },
 ]
 
