@@ -15,7 +15,7 @@ async function handler(page) {
           const data = await page.$$eval('.productItem', (productCards,url) => {
             return productCards.map(document => {
               try {
-                   const imageUrl = document.querySelector('.imgInner img').src
+                   const imageUrl =document.querySelector('[data-src]')?document.querySelector('[data-src]').getAttribute('data-src'): document.querySelector('.imgInner img').src
                 //   const title = document.querySelector('span[itemprop="name"]').getAttribute('content')
               //     const priceNew = document.querySelector('.discount-in-basket-price span')? document.querySelector('.discount-in-basket-price span').innerText.replace('₺',''):document.querySelector('.currentPrice').innerText.replace('₺','').trim()
               //     const link ="https://sarar.com/"+ document.querySelector('span[itemprop="url"]').getAttribute('content')

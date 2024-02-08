@@ -1,5 +1,5 @@
 
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
     productPageSelector:'[data-product-id]',
     linkSelector:'#main-nav a',
@@ -8,29 +8,29 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
 
     debugger;
     const url = await page.url()
 
 
  
-    await autoScroll(page)
+  //  await autoScroll(page)
 debugger
     const data = await page.$$eval('[data-product-id]', (productCards,url) => {
         return productCards.map(document => {
 
             try {
-                const title = document.querySelector('.product-link').getAttribute('aria-label')
+             //   const title = document.querySelector('.product-link').getAttribute('aria-label')
                 const imageUrl = document.querySelector('[data-lazy-bgset-src]')? 'https:'+ document.querySelector('[data-lazy-bgset-src]').getAttribute('data-lazy-bgset-src'):"https:"+ document.querySelector('.product-link [data-srcset]').getAttribute('data-srcset').split(',')[5].trim().split(' ')[0]
-                const priceNew = document.querySelector('.product-price__item').innerText.replaceAll('\n','').replace("TL",'')
-                const link = document.querySelector('.product-link').href
+             //   const priceNew = document.querySelector('.product-price__item').innerText.replaceAll('\n','').replace("TL",'')
+            //    const link = document.querySelector('.product-link').href
     
                 return {
-                    title: 'sementa ' + title.replace(/İ/g, 'i').toLowerCase(),
-                    priceNew: priceNew,
+                 //   title: 'sementa ' + title.replace(/İ/g, 'i').toLowerCase(),
+                //    priceNew: priceNew,
                     imageUrl,
-                    link,
+                //    link,
                     timestamp: Date.now(),
                     marka: 'sementa',
     
@@ -59,4 +59,4 @@ async function getUrls(page) {
 
     return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }

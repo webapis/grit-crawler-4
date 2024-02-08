@@ -77,5 +77,6 @@ export default [
  { url: 'https://quzu.com.tr/', selector: '.menu-list a', pageSelector:'.product-grid' },
  { url: 'https://www.roman.com.tr/', selector: '#main-menu a', pageSelector:'.product-detail-card' },
  { url: 'https://sarar.com/', selector: '#mainMenu a', pageSelector:'.catalogWrapper' },
+ { url: 'https://www.sementa.com/', selector: '#main-nav a', pageSelector:'[data-product-id]' },
 ]
 
