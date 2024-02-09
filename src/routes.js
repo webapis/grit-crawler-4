@@ -44,7 +44,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { star
 
     });
 
-    console.log('processedRequests==',result.processedRequests.length)
+    console.log('processedRequests==', result.processedRequests.length)
 
     debugger
 });
@@ -93,11 +93,11 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 
             if (errorPercentate < 5) {
 
-
+// title: title + '|' + data[0].title ? data[0].title : '',
 
                 await dataset.pushData({
                     url: request.loadedUrl,
-                    title,
+                    title: title + '|' + data[0].title ? data[0].title : '',
                     imageUrl: data[0].imageUrl
                 });
 

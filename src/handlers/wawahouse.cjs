@@ -1,33 +1,33 @@
 
 
 async function handler(page) {
-  
-debugger
-    const url = await page.url()
 
+    debugger
+    const url = await page.url()
+    const title = await page.evaluate(() => Array.from(document.querySelectorAll("ul#map-master li a")).map(m => m.innerText).join(' '))
 
     const data = await page.$$eval('.product', (productCards) => {
         return productCards.map(document => {
-try {
-    const imageUrl = document.querySelector('.product-image').src
-  
+            try {
+                const imageUrl = document.querySelector('.product-image').src
 
-    return {
- 
-        imageUrl,
-    
-        timestamp: Date.now(),
-        marka: 'wawahouse',
-    }
-} catch (error) {
-    return { error: error.toString(), content: document.innerHTML };
-}
-   
+
+                return {
+
+                    imageUrl,
+
+                    timestamp: Date.now(),
+                    marka: 'wawahouse',
+                }
+            } catch (error) {
+                return { error: error.toString(), content: document.innerHTML };
+            }
+
         })
     })
-debugger
-    
-return data
+    debugger
+
+    return data.map(m => { return { ...m, title } })
 }
 
 async function getUrls(page) {
@@ -38,6 +38,6 @@ async function getUrls(page) {
 
 
 
-    return { pageUrls, productCount:0, pageLength: pageUrls.length + 1 }
+    return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 }
 }
 module.exports = { handler, getUrls }
