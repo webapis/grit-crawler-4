@@ -83,5 +83,6 @@ export default [
 
  { url: 'https://www.tamertanca.com.tr/', selector: '.navigation a', pageSelector:'.product-item'},
  { url: 'https://www.tergan.com.tr/', selector: '#main-menu a', pageSelector:'.product-item'},
+ { url: 'https://www.tiffanytomato.com.tr/', selector: '.header-menu a', pageSelector:'.product'},
 ]
 
