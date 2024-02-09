@@ -98,5 +98,6 @@ export default [
  { url: 'https://www.yargici.com/', selector: '.main-menu a', pageSelector:'.product-list-container'},
  { url: 'https://www.zara.com/tr/', selector: 'a.layout-categories-category__link.link', pageSelector:'.product-grid__product-list'},
  { url: 'https://www.patirti.com/', selector: '#navigationbar a', pageSelector:'.categoryitem'},
+ { url: 'https://www.wawahouse.com.tr/', selector: '#mobile-nav-bar a', pageSelector:'#Products'},
 ]
 
