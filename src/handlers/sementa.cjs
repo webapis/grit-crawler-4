@@ -22,7 +22,8 @@ debugger
 
             try {
              //   const title = document.querySelector('.product-link').getAttribute('aria-label')
-                const imageUrl = document.querySelector('[srcset]')? document.querySelector('[srcset]').getAttribute('srcset').split(',')[0].split(' ')[0]:document.querySelector('[data-manual-srcset]').getAttribute('data-manual-srcset').split(',')[0].split(' ')[0]
+             const imageUrl =document.querySelector('.product-link img').getAttribute('srcset').split(',')[0].split(' ')[0]//document.querySelector('[data-manual-srcset]').getAttribute('data-manual-srcset').split(',')[0].split(' ')[0]
+               // const imageUrl = document.querySelector('[srcset]')? document.querySelector('[srcset]').getAttribute('srcset').split(',')[0].split(' ')[0]:document.querySelector('[data-manual-srcset]').getAttribute('data-manual-srcset').split(',')[0].split(' ')[0]
              //   const priceNew = document.querySelector('.product-price__item').innerText.replaceAll('\n','').replace("TL",'')
             //    const link = document.querySelector('.product-link').href
     

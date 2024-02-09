@@ -77,6 +77,10 @@ export default [
  { url: 'https://quzu.com.tr/', selector: '.menu-list a', pageSelector:'.product-grid' },
  { url: 'https://www.roman.com.tr/', selector: '#main-menu a', pageSelector:'.product-detail-card' },
  { url: 'https://sarar.com/', selector: '#mainMenu a', pageSelector:'.catalogWrapper' },
- { url: 'https://www.sementa.com/', selector: '#main-nav a', pageSelector:'[data-product-id]' },
+ //{ url: 'https://www.sementa.com/', selector: '#main-nav a', pageSelector:'[data-product-id]' },
+ //{ url: 'https://www.slatra.com.tr/', selector: '.navigation a', pageSelector:'#ProductListMainContainer' },
+ //{ url: 'https://www.stradivarius.com/tr/', selector: 'a.item-subcategory', pageSelector:'[id^="ProductGridItem"]',selectorHover:'.clickable-area.cursor-pointer',action:'click' },
+
+ { url: 'https://www.tamertanca.com.tr/', selector: '.navigation a', pageSelector:'.product-item'},
 ]
 

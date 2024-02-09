@@ -7,7 +7,7 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
 
     debugger
         const url = await page.url()
@@ -16,17 +16,17 @@ async function extractor(page) {
         const data = await page.$$eval('.product-item', (productCards,url) => {
             return productCards.map(document => {
     try {
-        const imageUrl = document.querySelector(".slider-item img").getAttribute('data-src')
-        const title = document.querySelector(".slider-item img").alt
-        const priceNew =document.querySelector(".product-info__offer-price")? document.querySelector(".product-info__offer-price").innerText.replace("TL",'').trim(): document.querySelector(".product-info__current-price").innerText.replace("TL",'').trim()
-        const link = document.querySelector(".product-item a").href
+        const imageUrl = document.querySelector("[data-src]").getAttribute('data-src')
+     //   const title = document.querySelector(".slider-item img").alt
+     //   const priceNew =document.querySelector(".product-info__offer-price")? document.querySelector(".product-info__offer-price").innerText.replace("TL",'').trim(): document.querySelector(".product-info__current-price").innerText.replace("TL",'').trim()
+     //   const link = document.querySelector(".product-item a").href
   
    
        return {
-           title: 'tamertanca ' + title.replace(/İ/g,'i').toLowerCase(),
-           priceNew,
+        //   title: 'tamertanca ' + title.replace(/İ/g,'i').toLowerCase(),
+         //  priceNew,
            imageUrl,
-           link,
+          // link,
            timestamp: Date.now(),
            marka: 'tamertanca',
        }
@@ -58,4 +58,4 @@ if(nextPage){
     
         return { pageUrls, productCount, pageLength: pageUrls.length + 1 }
     }
-    module.exports = { extractor, getUrls,...initValues }
+    module.exports = { handler, getUrls,...initValues }
