@@ -8,7 +8,7 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
 
 
     const url = await page.url()
@@ -19,15 +19,15 @@ async function extractor(page) {
     const data = await page.$$eval('.js-product-list-item', (productCards) => {
         return productCards.map(document => {
             const imageUrl =document.querySelector('.js-product-list-item img[data-src]') && document.querySelector('.js-product-list-item img[data-src]').getAttribute('data-src')
-            const title = document.querySelector('.product__name a').innerText
-            const priceNew = document.querySelector('.product__listing--basket-price span').innerText.replace('TL','').trim()
-            const link = document.querySelector('.product__name a').href
+          //  const title = document.querySelector('.product__name a').innerText
+         //   const priceNew = document.querySelector('.product__listing--basket-price span').innerText.replace('TL','').trim()
+          //  const link = document.querySelector('.product__name a').href
          
             return {
-                title: 'uspoloassn ' + title.replace(/İ/g, 'i').toLowerCase(),
-                priceNew,
+            //    title: 'uspoloassn ' + title.replace(/İ/g, 'i').toLowerCase(),
+           //     priceNew,
                 imageUrl,
-                link,
+             //   link,
                 timestamp: Date.now(),
                 marka: 'uspoloassn',
             }
@@ -55,4 +55,4 @@ async function getUrls(page) {
 
     return { pageUrls, productCount: 0, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
