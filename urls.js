@@ -89,5 +89,6 @@ export default [
  { url: 'https://www.tozlu.com/TR/', selector: '.navigation a', pageSelector:'#ProductPageProductList .ItemOrj.col-4'},
  { url: 'https://www.twist.com.tr/', selector: '.menu a', pageSelector:'.product-list-grid'},
  { url: 'https://tr.uspoloassn.com/', selector: '.header__navigation a', pageSelector:'.js-product-list-container'},
+ { url: 'https://www.vakko.com/', selector: '#main-menu a', pageSelector:'.plp-products'},
 ]
 
