@@ -6,7 +6,7 @@ const initValues ={
     exclude:[],
     postFix:'?currency=try'
   }
-async function extractor(page) {
+async function handler(page) {
 
     debugger
         const url = await page.url()
@@ -56,4 +56,4 @@ return data
 
         return { pageUrls, productCount:0, pageLength: pageUrls.length + 1 }
     }
-    module.exports = { extractor, getUrls,...initValues }
+    module.exports = { handler, getUrls,...initValues }
