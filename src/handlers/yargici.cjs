@@ -8,7 +8,7 @@ const initValues ={
   }
 
 
-async function extractor(page) {
+async function handler(page) {
 
 
     const url = await page.url()
@@ -56,4 +56,4 @@ if(nextPage){
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }

@@ -95,5 +95,6 @@ export default [
  { url: 'https://www.wcollection.com.tr/site-haritasi', selector: '.page-sitemap a', pageSelector:'.product-list-wrapper'},
  { url: 'https://www.wrangler.com.tr/', selector: '.nav-menu a', pageSelector:'.cl-product-grid'},
  { url: 'https://www.xint.com.tr/', selector: '#mainMenu a', pageSelector:'.catalogWrapper'},
+ { url: 'https://www.yargici.com/', selector: '.main-menu a', pageSelector:'.product-list-container'},
 ]
 
