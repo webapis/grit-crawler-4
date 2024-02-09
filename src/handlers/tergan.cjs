@@ -8,25 +8,25 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
  
 
     const url = await page.url()
 
 
-    const data = await page.$$eval('.item.itemauto', (productCards,url) => {
+    const data = await page.$$eval('.product-item', (productCards,url) => {
         return productCards.map(productCard => {
             try {
-                const imageUrl = 'https://www.tergan.com.tr'+ productCard.querySelector('.product img').getAttribute('src')
-                const title = productCard.querySelector(".product .description a").innerHTML.trim()
-                const priceNew = productCard.querySelector('.p-value') ? productCard.querySelector('.p-value').textContent.trim().replace('TL', '').trim() : productCard.querySelector('.price-sales').textContent.trim().replace('TL', '').trim()
-                const link = productCard.querySelector(".product .description a").href
-              
+                const imageUrl = document.querySelector('[data-src]').getAttribute('data-src')
+              //  const title = productCard.querySelector(".product .description a").innerHTML.trim()
+              //  const priceNew = productCard.querySelector('.p-value') ? productCard.querySelector('.p-value').textContent.trim().replace('TL', '').trim() : productCard.querySelector('.price-sales').textContent.trim().replace('TL', '').trim()
+               // const link = productCard.querySelector(".product .description a").href
+              //
                 return {
-                    title: 'tergan ' + title.replace(/İ/g, 'i').toLowerCase(),
-                    priceNew,
+                  //  title: 'tergan ' + title.replace(/İ/g, 'i').toLowerCase(),
+                    //priceNew,
                     imageUrl,
-                    link,
+                    //link,
                     timestamp: Date.now(),
                     marka: 'tergan',
                 }  
@@ -58,4 +58,4 @@ if(nextPage){
 
     return { pageUrls, productCount, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }

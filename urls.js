@@ -82,5 +82,6 @@ export default [
  //{ url: 'https://www.stradivarius.com/tr/', selector: 'a.item-subcategory', pageSelector:'[id^="ProductGridItem"]',selectorHover:'.clickable-area.cursor-pointer',action:'click' },
 
  { url: 'https://www.tamertanca.com.tr/', selector: '.navigation a', pageSelector:'.product-item'},
+ { url: 'https://www.tergan.com.tr/', selector: '#main-menu a', pageSelector:'.product-item'},
 ]
 
