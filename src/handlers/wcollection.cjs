@@ -7,37 +7,39 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
   
-
+debugger
     const url = await page.url()
 
-  
+  await page.waitForTimeout(5000)
    // await autoScroll(page)
 
-    const data = await page.$$eval('.product-item', (productCards,url) => {
+    const data = await page.$$eval('swiper-slide', (productCards) => {
         return productCards.map(document => {
 try {
-    const imageUrl = document.querySelector('.slider-image-container img').getAttribute('data-src')
-    const title = document.querySelector('.product-item__name').innerText
-    const priceNew = document.querySelector('.discount-price')?document.querySelector('.discount-price').innerText.replace('₺','').trim().replace(/[a-z]/gi, '') :document.querySelector('.product-item-price-wrapper').innerText.replace('₺','').trim().replace(/[a-z]/gi, '') 
-    const link = "https://www.wcollection.com.tr/" +document.querySelector('.product-item__name[href]').getAttribute('href')
+    const imageUrl = document.querySelector('swiper-slide img').src
+   // const title = document.querySelector('.product-item__name').innerText
+   //// const priceNew = document.querySelector('.discount-price')?document.querySelector('.discount-price').innerText.replace('₺','').trim().replace(/[a-z]/gi, '') :document.querySelector('.product-item-price-wrapper').innerText.replace('₺','').trim().replace(/[a-z]/gi, '') 
+   // const link = "https://www.wcollection.com.tr/" +document.querySelector('.product-item__name[href]').getAttribute('href')
 
 
     return {
-        title: 'wcollection ' + title.replace(/İ/g,'i').toLowerCase(),
-        priceNew:priceNew.replaceAll('\n','').trim(),
+     //   title: 'wcollection ' + title.replace(/İ/g,'i').toLowerCase(),
+     //   priceNew:priceNew.replaceAll('\n','').trim(),
         imageUrl,
-        link,
+    //    link,
         timestamp: Date.now(),
         marka: 'wcollection',
     }
 } catch (error) {
-    return { error: error.toString(),url, content: document.innerHTML };
+    return { error: error.toString(), content: document.innerHTML };
 }
    
         })
-    },url)
+    })
+debugger
+    
 return data
 }
 
@@ -58,4 +60,4 @@ if(nextPage){
 
     return { pageUrls, productCount, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }

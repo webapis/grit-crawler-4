@@ -54,15 +54,17 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 
     const { userData: { pageSelector } } = request
 
-
+    await page.waitForTimeout(5000)
+    debugger
     const isProductPage = await page.$(pageSelector)
+    debugger
     if (isProductPage) {
 
         debugger
 
         const { handler } = require(`./handlers/${marka}.cjs`)
         const data = await handler(page)
-
+        debugger
 
         if (data.length > 0) {
 
