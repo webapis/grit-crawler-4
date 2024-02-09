@@ -44,7 +44,7 @@ router.addDefaultHandler(async ({ enqueueLinks, log, request: { userData: { star
 
     });
 
-    //console.log('result==',result)
+    console.log('processedRequests==',result.processedRequests.length)
 
     debugger
 });

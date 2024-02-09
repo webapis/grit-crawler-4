@@ -7,7 +7,7 @@ async function handler(page, ) {
     const data = await page.$$eval('.productItem', (productCards) => {
         return productCards.map(document => {
 
-            const imageUrl = document.querySelector('a.detailLink img').src
+            const imageUrl = document.querySelector('[data-src]').getAttribute('data-src')//document.querySelector('a.detailLink img').src
             const title = document.querySelector('a.detailLink img').alt
             const priceNew = document.querySelector('.discountPrice span').innerText.replace('₺', '')
             const link = document.querySelector('a.detailLink').href

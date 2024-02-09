@@ -1,5 +1,5 @@
 
-const {autoScroll}=require('../../utils/autoscroll')
+//const {autoScroll}=require('../../utils/autoscroll')
 const initValues ={
     productPageSelector:'.product-grid__product-list',
     linkSelector:'.ddd',
@@ -12,13 +12,13 @@ const initValues ={
 
 
 
-async function extractor(page) {
+async function handler(page) {
 
     debugger
 
 debugger
 
-await autoScroll(page)
+//await autoScroll(page)
 
     const url = await page.url()
     debugger
@@ -29,15 +29,15 @@ await autoScroll(page)
     const data = await page.$$eval('li[data-productid]', (productCards,url) => {
         return productCards.map(document => {
             try {
-                const priceNew = document.querySelector('.money-amount__main').innerText.replace('TL','').trim()
-                const link = document.querySelector('.product-grid-product__figure a').href
+             //   const priceNew = document.querySelector('.money-amount__main').innerText.replace('TL','').trim()
+             //   const link = document.querySelector('.product-grid-product__figure a').href
                 const imageUrl =document.querySelector('.product-grid-product__figure a img')? document.querySelector('.product-grid-product__figure a img').src:null
-                const title = document.querySelector('.product-grid-product-info__main-info h3').innerText
+               // const title = document.querySelector('.product-grid-product-info__main-info h3').innerText
                 return {
-                    title: 'zara ' + title.replace(/İ/g, 'i').toLowerCase(),
-                    priceNew,
+                 //   title: 'zara ' + title.replace(/İ/g, 'i').toLowerCase(),
+                 //   priceNew,
                     imageUrl,
-                    link,
+                 //   link,
                     timestamp: Date.now(),
                     marka: 'zara',
     
@@ -62,4 +62,4 @@ async function getUrls(page) {
 }
 
 
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
