@@ -90,5 +90,6 @@ export default [
  { url: 'https://www.twist.com.tr/', selector: '.menu a', pageSelector:'.product-list-grid'},
  { url: 'https://tr.uspoloassn.com/', selector: '.header__navigation a', pageSelector:'.js-product-list-container'},
  { url: 'https://www.vakko.com/', selector: '#main-menu a', pageSelector:'.plp-products'},
+ { url: 'https://www.valiberta.com/', selector: '.navigation a', pageSelector:'.appliedFilter.FiltrelemeUrunAdet span'},
 ]
 
