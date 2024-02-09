@@ -4,7 +4,7 @@ async function handler(page) {
 
     debugger
     const url = await page.url()
-    const title = await page.evaluate(() => Array.from(document.querySelectorAll("ul#map-master li a")).map(m => m.innerText).join(' '))
+    const pageTitle = await page.evaluate(() => Array.from(document.querySelectorAll("ul#map-master li a")).map(m => m.innerText).join(' '))
 
     const data = await page.$$eval('.product', (productCards) => {
         return productCards.map(document => {
@@ -27,7 +27,7 @@ async function handler(page) {
     })
     debugger
 
-    return data.map(m => { return { ...m, title } })
+    return data.map(m => { return { ...m, pageTitle } })
 }
 
 async function getUrls(page) {

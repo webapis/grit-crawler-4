@@ -97,7 +97,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 
                 await dataset.pushData({
                     url: request.loadedUrl,
-                    title: title + '|' + data[0].title ? data[0].title : '',
+                    title: title + '|' + data[0].pageTitle ? data[0].pageTitle : '',
                     imageUrl: data[0].imageUrl
                 });
 
