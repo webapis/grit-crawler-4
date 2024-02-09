@@ -86,5 +86,6 @@ export default [
  { url: 'https://www.tiffanytomato.com.tr/', selector: '.header-menu a', pageSelector:'.product'},
  { url: 'https://www.tommylife.com.tr/', selector: '#mainMenu a', pageSelector:'.catalogWrapper'},
  { url: 'https://www.tonnyblack.com.tr', selector: '.navigation a', pageSelector:'.productItem'},
+ { url: 'https://www.tozlu.com/TR/', selector: '.navigation a', pageSelector:'#ProductPageProductList .ItemOrj.col-4'},
 ]
 

@@ -7,23 +7,23 @@ const initValues ={
     exclude:[],
     postFix:''
   }
-async function extractor(page) {
+async function handler(page) {
  
     const url = await page.url()
 
     const data = await page.$$eval('.ItemOrj', (productCards,url) => {
         return productCards.map(productCard => {
             try {
-                const imageUrl = productCard.querySelector('[data-original]').getAttribute('data-original')
-                const title = productCard.querySelector('.productName.detailUrl a').innerHTML.trim()
-                const priceNew = productCard.querySelector('.discountPrice span').innerHTML.replace('TL', '').replace(/\n/g, '').trim()
-                const link = productCard.querySelector('.productName.detailUrl a').href
+                const imageUrl = productCard.querySelector('[data-src]').getAttribute('data-src')
+             //   const title = productCard.querySelector('.productName.detailUrl a').innerHTML.trim()
+              //  const priceNew = productCard.querySelector('.discountPrice span').innerHTML.replace('TL', '').replace(/\n/g, '').trim()
+              //  const link = productCard.querySelector('.productName.detailUrl a').href
           
                 return {
-                    title: 'tozlu ' + title.replace(/İ/g, 'i').toLowerCase(),
-                    priceNew,
+                //    title: 'tozlu ' + title.replace(/İ/g, 'i').toLowerCase(),
+                //    priceNew,
                     imageUrl,
-                    link,
+               //     link,
                     timestamp: Date.now(),
                     marka: 'tozlu',
                 }   
@@ -54,4 +54,4 @@ if(nextPage){
 
     return { pageUrls, productCount, pageLength: pageUrls.length + 1 }
 }
-module.exports = { extractor, getUrls,...initValues }
+module.exports = { handler, getUrls,...initValues }
