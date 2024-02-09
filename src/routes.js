@@ -97,7 +97,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 
                 await dataset.pushData({
                     url: request.loadedUrl,
-                    title: title + '|' + data[0].pageTitle ? data[0].pageTitle : '',
+                    title:  data[0].pageTitle ? title+'| '+ data[0].pageTitle : title,
                     imageUrl: data[0].imageUrl
                 });
 
@@ -106,6 +106,7 @@ router.addHandler('detail', async ({ request, page, log, pushData }) => {
 
 
         } else {
+
             log.info(`PRODUCT PAGE: DATALENGTH:${data.length} ${title}`, { url: request.loadedUrl });
         }
         debugger
