@@ -101,5 +101,6 @@ export default [
  { url: 'https://www.wawahouse.com.tr/', selector: '#mobile-nav-bar a', pageSelector:'#Products'},
  { url: 'https://asligoncer.com/', selector: 'nav a', pageSelector:'.product-item__inner'},
  { url: 'https://atolyewolf.com/', selector: 'li a', pageSelector:'.product-card__media'},
+ { url: 'https://cansui.com/tr', selector: 'li a', pageSelector:'.product-container'},
 ]
 
