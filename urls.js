@@ -100,5 +100,6 @@ export default [
  { url: 'https://www.patirti.com/', selector: '#navigationbar a', pageSelector:'.categoryitem'},
  { url: 'https://www.wawahouse.com.tr/', selector: '#mobile-nav-bar a', pageSelector:'#Products'},
  { url: 'https://asligoncer.com/', selector: 'nav a', pageSelector:'.product-item__inner'},
+ { url: 'https://atolyewolf.com/', selector: 'li a', pageSelector:'.product-card__media'},
 ]
 
