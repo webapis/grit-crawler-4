@@ -9,7 +9,7 @@ const require = createRequire(import.meta.url);
 require("dotenv").config();
 const genders = require('./data/gender.json')
 const category = require('./data/kategori.json')
-
+const taki =require('./data/taki.json')
 const dataDataset = await Dataset.open('brands');
 const { items } = await dataDataset.getData();
 
@@ -20,9 +20,9 @@ const data = items.map(m => {
     const genderKeyword = searchObject(m, genderArray)
     const genderName = genders.find(f => f.keywords.includes(genderKeyword))
     //kategori
-    const kategoryArray = category.map(m => m.keywords).flat()
+    const kategoryArray = [...category,...taki].map(m => m.keywords).flat()
     const kategoryKeyword = searchObject(m, kategoryArray)
-    const kategoryName = category.find(f => f.keywords.includes(kategoryKeyword))
+    const kategoryName = [...category,...taki].find(f => f.keywords.includes(kategoryKeyword))
     return { ...m, gender: genderKeyword ? genderName.name : "diğer", category: kategoryKeyword ? kategoryName.name : "diğer"}
 })
 

@@ -1,0 +1,28 @@
+[
+    {
+        "keywords": [
+            "yüzük","yuzuk","ring"
+        ],
+        "name": "yüzük"
+    },
+    {
+        "keywords": [
+            "necklace","kolye"
+        ],
+        "name": "kolye"
+    }
+    ,
+    {
+        "keywords": [
+            "bracelet","bileklik"
+        ],
+        "name": "bileklik"
+    }
+    ,
+    {
+        "keywords": [
+            "küpe","kupe","earring"
+        ],
+        "name": "küpe"
+    }
+]
